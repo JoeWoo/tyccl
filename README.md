@@ -23,8 +23,13 @@ Or install it yourself as:
 simple example:
 
 ```ruby
-
-	require 'tyccl'
+  
+  # Result_t = Struct.new(:value,:x_id,:y_id)
+  # this struct is used to return analysing result
+  # * field 'value' store the analysing value
+  # * field 'x_id' 'y_id' store the ID of word X and Y 
+	
+  require 'tyccl'
 	tyc = Tyccl.instance  # singleton class
  
   # Given wordA(string) and wordB(string). 
@@ -56,7 +61,7 @@ simple example:
 
 ```
 
-see more methods in [api doc](https://github.com/JoeWoo/tyccl/blob/master/doc/index.html)tyccl/doc/index.html and more example in [test](https://github.com/JoeWoo/tyccl/blob/master/test/test_tyccl.rb)
+download and see more methods in [api doc](https://github.com/JoeWoo/tyccl/blob/master/doc/index.html)tyccl/doc/index.html and more examples in [test](https://github.com/JoeWoo/tyccl/blob/master/test/test_tyccl.rb).
 
 ## Contributing
 
@@ -65,4 +70,4 @@ see more methods in [api doc](https://github.com/JoeWoo/tyccl/blob/master/doc/in
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin fork-new`)
 5. Create new Pull Request
->>>>>>> master
+
