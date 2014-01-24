@@ -2,6 +2,8 @@
 
 tyccl(同义词词林 哈工大扩展版) is a  ruby gem that provides friendly functions to analyse similarity between Chinese Words.
 
+all of Tyccl`s source files using charset: UTF-8
+
 ## Installation
 
 Add this line to your application's Gemfile:

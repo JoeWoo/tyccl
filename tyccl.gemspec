@@ -7,10 +7,10 @@ Gem::Specification.new do |spec|
   spec.name          = "tyccl"
   spec.version       = Tyccl::VERSION
   spec.authors       = ["JoeWoo"]
-  spec.email         = ["wujian_hit@qq.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.email         = ["0wujian0@gmail.com"]
+  spec.summary       = %q{"tools of analysing similarity between Chinese Words."}
+  spec.description   = %q{"tyccl(同义词词林 哈工大扩展版) is a ruby gem that provides friendly functions to analyse similarity between Chinese Words."}
+  spec.homepage      = "https://github.com/JoeWoo/tyccl"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
