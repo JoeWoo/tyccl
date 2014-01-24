@@ -55,7 +55,7 @@ simple example:
  	#	["人数", "人头", "人口", "人", "口", "丁", "家口", "食指", "总人口"]	]
 
 ```
-see more methods in [api doc](/doc/index.html) and more example in [test](/test/test_nlpir.rb)
+see more methods in [api doc](/doc/index.html) and more examples in [test](/test/test_nlpir.rb)
 
 ## Contributing
 
