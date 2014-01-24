@@ -61,7 +61,7 @@ simple example:
 
 ```
 
-download and see more methods in [api doc](https://github.com/JoeWoo/tyccl/blob/master/doc/index.html)tyccl/doc/index.html and more examples in [test](https://github.com/JoeWoo/tyccl/blob/master/test/test_tyccl.rb).
+download and see more methods in [api doc](https://github.com/JoeWoo/tyccl/blob/master/doc/index.html) and more examples in [test](https://github.com/JoeWoo/tyccl/blob/master/test/test_tyccl.rb).
 
 ## Contributing
 
