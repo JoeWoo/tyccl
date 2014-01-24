@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'rake'
 require 'rake/testtask'
 require 'test/unit'
@@ -8,23 +9,26 @@ $tyc=Tyccl.instance
 
 class TycclTest < Test::Unit::TestCase
 
-  def test_init
+  def test_instance
     assert_equal 17809,
-        $tyc.get_codes_sum
+        $tyc.get_id_sum
     assert_equal 77457,
     	$tyc.get_index_sum
   end
 
-  def test_get_atom_by_id
+  def test_get_words_by_id
   	assert_equal ["人","士","人物","人士","人氏","人选"],
-  		$tyc.get_atom_by_id("Aa01A01=")
+  		$tyc.get_words_by_id("Aa01A01=")
+  	assert_equal nil,
+  		$tyc.get_words_by_id("dfdf")
+
   end
   
-  def test_get_ids_by_regex
+  def test_get_ids_by_wildcard
   	assert_equal 9,
-  		$tyc.get_ids_by_regex("Aa01A...").size
+  		$tyc.get_ids_by_wildcard("Aa01A...").size
   	assert_equal 32,
-  		$tyc.get_ids_by_regex("Aa..A...").size
+  		$tyc.get_ids_by_wildcard("Aa**A...").size
   end
 
   def test_get_ids_by_word
@@ -108,32 +112,31 @@ class TycclTest < Test::Unit::TestCase
 # dist ranges [0,10]; 
 # if dist<7 then we believe that the two words are related 
   def test_dist  
-  	assert_equal Pairs.new(0,"Aa01A01=","Aa01A01="),
+  	assert_equal Result_t.new(0,"Aa01A01=","Aa01A01="),
   		$tyc.dist("人","士")
-  	assert_equal Pairs.new(2,"Bh06A32=","Bh06A34="),
+  	assert_equal Result_t.new(2,"Bh06A32=","Bh06A34="),
   		$tyc.dist("西红柿","黄瓜")
-  	assert_equal Pairs.new(4,"Aa01A05=","Aa01B03#"),
+  	assert_equal Result_t.new(4,"Aa01A05=","Aa01B03#"),
   		$tyc.dist("匹夫","良民")
-  	assert_equal Pairs.new(6,"Bh07A14=","Bh06A32="),
+  	assert_equal Result_t.new(6,"Bh07A14=","Bh06A32="),
   		$tyc.dist("苹果","西红柿")
-  	assert_equal Pairs.new(8,"Aa01B02=","Ab01B10="),
+  	assert_equal Result_t.new(8,"Aa01B02=","Ab01B10="),
   		$tyc.dist("群众","村姑")
-  	assert_equal Pairs.new(10,"Aa01A01=","Kd04C01="),
+  	assert_equal Result_t.new(10,"Aa01A01=","Kd04C01="),
   		$tyc.dist("人","哟")
   end
 
   def test_sim
-  	#puts $tyc.sim("邮递员","联络员")
-	result=[	Pairs.new(1.0,"Aa01B01=","Aa01B01="),
-				Pairs.new(0.95766,"Aa01B01=","Aa01B02="),
-				Pairs.new(0.71825,"Aa01B01=","Aa01B03#"),
-				Pairs.new(0.48013,"Aa01B01=","Aa01C07#"),
-				Pairs.new(0.40396,"Aa01B01=","Ab02B01="),
-				Pairs.new(0.39028,"Aa01B01=","Ad01A02="),
-				Pairs.new(0.21692,"Aa01B01=","Aa03A05="),
-				Pairs.new(0.20361,"Aa01B01=","Ah01A01="),
-				Pairs.new(0.08112,"Aa01B01=","Ak03A03#"),
-				Pairs.new(0.04007,"Aa01B01=","Al05B01=") 	]
+	result=[	Result_t.new(1.0,"Aa01B01=","Aa01B01="),
+				Result_t.new(0.95766,"Aa01B01=","Aa01B02="),
+				Result_t.new(0.71825,"Aa01B01=","Aa01B03#"),
+				Result_t.new(0.48013,"Aa01B01=","Aa01C07#"),
+				Result_t.new(0.40396,"Aa01B01=","Ab02B01="),
+				Result_t.new(0.39028,"Aa01B01=","Ad01A02="),
+				Result_t.new(0.21692,"Aa01B01=","Aa03A05="),
+				Result_t.new(0.20361,"Aa01B01=","Ah01A01="),
+				Result_t.new(0.08112,"Aa01B01=","Ak03A03#"),
+				Result_t.new(0.04007,"Aa01B01=","Al05B01=") 	]
 
   	words=["国民","群众","良民","党群","成年人","市民","同志","亲属","志愿者","先锋"]
   	i=0
