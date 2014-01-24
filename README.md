@@ -55,11 +55,11 @@ simple example:
  	#	["人数", "人头", "人口", "人", "口", "丁", "家口", "食指", "总人口"]	]
 
 ```
-see more methods in tyccl/doc/index.html and more example in [test](tyccl/test/test_nlpir.rb)
+see more methods in [api doc](/doc/index.html) and more example in [test](/test/test_nlpir.rb)
 
 ## Contributing
 
-1. Fork it ( http://github.com/<my-github-username>/tyccl/fork )
+1. Fork it ( http://github.com/JoeWoo/tyccl/fork )
 2. Create your feature branch (`git checkout -b fork-new`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin fork-new`)
