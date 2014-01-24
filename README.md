@@ -55,7 +55,8 @@ simple example:
  	#	["人数", "人头", "人口", "人", "口", "丁", "家口", "食指", "总人口"]	]
 
 ```
-see more methods in tyccl/doc/index.html and more example in [test](https://github.com/JoeWoo/tyccl/blob/master/test/test_tyccl.rb)
+
+see more methods in [api doc](https://github.com/JoeWoo/tyccl/blob/master/doc/index.html)tyccl/doc/index.html and more example in [test](https://github.com/JoeWoo/tyccl/blob/master/test/test_tyccl.rb)
 
 ## Contributing
 
