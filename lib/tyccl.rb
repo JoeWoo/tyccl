@@ -9,10 +9,10 @@
 # * License::   MIT
 #
 
-require File.expand_path("../tyccl/version", __FILE__)
-require "algorithms"
-require "yaml"
-require "logger"
+require File.expand_path("../tyccl/version", __FILE__)#:nodoc:all
+require "algorithms"#:nodoc:all
+require "yaml"#:nodoc:all
+require "logger"#:nodoc:all
 
 
 # this struct is used to return analysing result

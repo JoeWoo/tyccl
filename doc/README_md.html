@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>README - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+<div id="table-of-contents">
+  <nav class="section">
+    <h3 class="section-header">Table of Contents</h3>
+    <ul>
+      <li><a href="#label-Tyccl">Tyccl</a>
+      <li><a href="#label-Installation">Installation</a>
+      <li><a href="#label-Usage">Usage</a>
+      <li><a href="#label-Contributing">Contributing</a>
+    </ul>
+  </nav>
+</div>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README_md.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./Tyccl.html">Tyccl</a>
+  
+    <li><a href="./Tyccl/Containers.html">Tyccl::Containers</a>
+  
+    <li><a href="./Tyccl/Logger.html">Tyccl::Logger</a>
+  
+    <li><a href="./Tyccl/YAML.html">Tyccl::YAML</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-Tyccl"><a href="Tyccl.html">Tyccl</a><span><a href="#label-Tyccl">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p>tyccl(同义词词林 哈工大扩展版) is a ruby gem that provides friendly functions to
+analyse similarity between Chinese Words.</p>
+
+<p>all of Tyccl`s source files using charset: UTF-8</p>
+
+<h2 id="label-Installation">Installation<span><a href="#label-Installation">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>Add this line to your application&#39;s Gemfile:</p>
+
+<pre>gem &#39;tyccl&#39;</pre>
+
+<p>And then execute:</p>
+
+<pre>$ bundle</pre>
+
+<p>Or install it yourself as:</p>
+
+<pre>$ gem install tyccl</pre>
+
+<h2 id="label-Usage">Usage<span><a href="#label-Usage">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>simple example:</p>
+
+<pre class="ruby">
+  <span class="ruby-comment"># Result_t = Struct.new(:value,:x_id,:y_id)</span>
+  <span class="ruby-comment"># this struct is used to return analysing result</span>
+  <span class="ruby-comment"># * field &#39;value&#39; store the analysing value</span>
+  <span class="ruby-comment"># * field &#39;x_id&#39; &#39;y_id&#39; store the ID of word X and Y </span>
+        
+  <span class="ruby-identifier">require</span> <span class="ruby-string">&#39;tyccl&#39;</span>
+ 
+  <span class="ruby-comment"># Given wordA(string) and wordB(string). </span>
+  <span class="ruby-comment"># Returns a Struct Result_t which contains idA, idB, and shortest semantic distance(int) between wordA and wordB. </span>
+
+        <span class="ruby-identifier">result</span> = <span class="ruby-constant">Tyccl</span>.<span class="ruby-identifier">dist</span>(<span class="ruby-string">&quot;西红柿&quot;</span>,<span class="ruby-string">&quot;黄瓜&quot;</span>) 
+                <span class="ruby-identifier">puts</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">value</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">x_id</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">y_id</span>
+
+  <span class="ruby-comment"># Given wordA(string) and wordB(string).</span>
+  <span class="ruby-comment"># Returns a Struct Result_t which contains the most similar Pairs wordA`s ID and wordB`s ID, and similarity(float) between idA and idB.</span>
+        <span class="ruby-identifier">result</span> = <span class="ruby-constant">Tyccl</span>.<span class="ruby-identifier">sim</span>(<span class="ruby-string">&quot;西红柿&quot;</span>,<span class="ruby-string">&quot;黄瓜&quot;</span>)
+                <span class="ruby-identifier">puts</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">value</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">x_id</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">y_id</span>
+
+  <span class="ruby-comment"># Given a word(string) and a level(int),level`s value range is [0,4],4 is default, value of level is more bigger, the similarity between returned words and the given word is more less.   </span>
+  <span class="ruby-comment"># Returns a two dimensional array that contains the parameter Word`s similar words which divided by different ID that the word matchs.</span>
+  <span class="ruby-comment"># If the word has no similar, nil is returned.</span>
+
+        <span class="ruby-identifier">m</span> = <span class="ruby-constant">Tyccl</span>.<span class="ruby-identifier">get_similar</span>(<span class="ruby-string">&quot;人&quot;</span>)  
+        <span class="ruby-identifier">puts</span> <span class="ruby-identifier">m</span>
+        <span class="ruby-comment">#[      [&quot;人&quot;, &quot;士&quot;, &quot;人物&quot;, &quot;人士&quot;, &quot;人氏&quot;, &quot;人选&quot;],</span>
+        <span class="ruby-comment">#       [&quot;成年人&quot;, &quot;壮年人&quot;, &quot;大人&quot;, &quot;人&quot;, &quot;丁&quot;, &quot;壮丁&quot;, &quot;佬&quot;, &quot;中年人&quot;],</span>
+        <span class="ruby-comment">#       [&quot;身体&quot;, &quot;人&quot;],</span>
+        <span class="ruby-comment">#       [&quot;人格&quot;, &quot;人品&quot;, &quot;人头&quot;, &quot;人&quot;, &quot;品质&quot;, &quot;质地&quot;, &quot;格调&quot;, &quot;灵魂&quot;, &quot;为人&quot;],</span>
+        <span class="ruby-comment">#       [&quot;人数&quot;, &quot;人头&quot;, &quot;人口&quot;, &quot;人&quot;, &quot;口&quot;, &quot;丁&quot;, &quot;家口&quot;, &quot;食指&quot;, &quot;总人口&quot;]    ]</span>
+</pre>
+
+<p>download and see more methods in <a
+href="https://github.com/JoeWoo/tyccl/blob/master/doc/index.html">api
+doc</a> and more examples in <a
+href="https://github.com/JoeWoo/tyccl/blob/master/test/test_tyccl.rb">test</a>.</p>
+
+<h2 id="label-Contributing">Contributing<span><a href="#label-Contributing">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>1. Fork it ( <a
+href="http://github.com/JoeWoo/tyccl/fork">github.com/JoeWoo/tyccl/fork</a>
+)
+2. Create your feature branch (<code>git checkout -b fork-new</code>)
+3.
+Commit your changes (<code>git commit -am &#39;Add some
+feature&#39;</code>)
+4. Push to the branch (<code>git push origin
+fork-new</code>)
+5. Create new Pull Request</p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

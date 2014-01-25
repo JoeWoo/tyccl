@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Tyccl - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/tyccl.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Object.html">Object</a>
+  
+</nav>
+
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-c-combine_id">::combine_id</a>
+    
+    <li ><a href="#method-c-compare_id">::compare_id</a>
+    
+    <li ><a href="#method-c-cut_id">::cut_id</a>
+    
+    <li ><a href="#method-c-dist">::dist</a>
+    
+    <li ><a href="#method-c-gen_findstring">::gen_findstring</a>
+    
+    <li ><a href="#method-c-get_dist_by_id">::get_dist_by_id</a>
+    
+    <li ><a href="#method-c-get_equal">::get_equal</a>
+    
+    <li ><a href="#method-c-get_id_sum">::get_id_sum</a>
+    
+    <li ><a href="#method-c-get_ids_by_wildcard">::get_ids_by_wildcard</a>
+    
+    <li ><a href="#method-c-get_ids_by_word">::get_ids_by_word</a>
+    
+    <li ><a href="#method-c-get_index_sum">::get_index_sum</a>
+    
+    <li ><a href="#method-c-get_same">::get_same</a>
+    
+    <li ><a href="#method-c-get_sim_by_id">::get_sim_by_id</a>
+    
+    <li ><a href="#method-c-get_similar">::get_similar</a>
+    
+    <li ><a href="#method-c-get_words_by_id">::get_words_by_id</a>
+    
+    <li ><a href="#method-c-has_equal-3F">::has_equal?</a>
+    
+    <li ><a href="#method-c-has_same-3F">::has_same?</a>
+    
+    <li ><a href="#method-c-has_single-3F">::has_single?</a>
+    
+    <li ><a href="#method-c-sim">::sim</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README_md.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./Tyccl.html">Tyccl</a>
+  
+    <li><a href="./Tyccl/Containers.html">Tyccl::Containers</a>
+  
+    <li><a href="./Tyccl/Logger.html">Tyccl::Logger</a>
+  
+    <li><a href="./Tyccl/YAML.html">Tyccl::YAML</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Tyccl</h1>
+
+  <div id="description" class="description">
+    
+<p>class <a href="Tyccl.html">Tyccl</a> is a singleton class, no Tyccl.new()
+method instead of Tyccl.instance() to keep <a href="Tyccl.html">Tyccl</a>
+object just only one.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-combine_id" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">combine_id</span><span
+            class="method-args">(frame)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>the method cut_id`s inverse process.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="combine_id-source">
+            <pre><span class="ruby-comment"># File lib/tyccl.rb, line 338</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">combine_id</span>(<span class="ruby-identifier">frame</span>)
+  <span class="ruby-identifier">m</span>=<span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-identifier">frame</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">seg</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">m</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">seg</span>
+  }
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">m</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- combine_id-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- combine_id-method -->
+
+    
+      <div id="method-c-compare_id" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">compare_id</span><span
+            class="method-args">(idA, idB)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Given idA(string) and idB(string). Returns fisrt diffrent place of their
+segment, place vlaues <a href="http://0,4">in</a>. if they are the same ,
+returns 5.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="compare_id-source">
+            <pre><span class="ruby-comment"># File lib/tyccl.rb, line 349</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">compare_id</span>(<span class="ruby-identifier">idA</span>, <span class="ruby-identifier">idB</span>) 
+  <span class="ruby-identifier">frameA</span>=<span class="ruby-identifier">cut_id</span>(<span class="ruby-identifier">idA</span>)
+  <span class="ruby-identifier">frameB</span>=<span class="ruby-identifier">cut_id</span>(<span class="ruby-identifier">idB</span>)
+  <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">frameA</span>.<span class="ruby-identifier">length</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>){ <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">frameA</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">frameB</span>[<span class="ruby-identifier">i</span>]) <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">i</span>
+    <span class="ruby-keyword">end</span>
+  }
+  <span class="ruby-keyword">return</span> <span class="ruby-value">5</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- compare_id-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- compare_id-method -->
+
+    
+      <div id="method-c-cut_id" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cut_id</span><span
+            class="method-args">(id)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Given a id(string). Returns an array that contains 5 strings which are ID`s
+diffrent segment, like: A，a，01，A，01= .</p>
+          
+          
+
+          
+          <div class="method-source-code" id="cut_id-source">
+            <pre><span class="ruby-comment"># File lib/tyccl.rb, line 332</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">cut_id</span>(<span class="ruby-identifier">id</span>)
+  <span class="ruby-identifier">frame</span>=[<span class="ruby-identifier">id</span>[<span class="ruby-value">0</span>],<span class="ruby-identifier">id</span>[<span class="ruby-value">1</span>],<span class="ruby-identifier">id</span>[<span class="ruby-value">2</span><span class="ruby-operator">..</span><span class="ruby-value">3</span>],<span class="ruby-identifier">id</span>[<span class="ruby-value">4</span>],<span class="ruby-identifier">id</span>[<span class="ruby-value">5</span><span class="ruby-operator">..</span><span class="ruby-value">7</span>]]
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">frame</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cut_id-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cut_id-method -->
+
+    
+      <div id="method-c-dist" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dist</span><span
+            class="method-args">(wordA, wordB)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Given wordA(string) and wordB(string). Returns a Struct Result_t which
+contains idA, idB, and shortest  semantic distance(int) between wordA and
+wordB.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="dist-source">
+            <pre><span class="ruby-comment"># File lib/tyccl.rb, line 253</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">dist</span>(<span class="ruby-identifier">wordA</span>, <span class="ruby-identifier">wordB</span>)
+  <span class="ruby-identifier">alpha</span>=<span class="ruby-value">10.0</span><span class="ruby-operator">/</span><span class="ruby-value">5</span>
+  <span class="ruby-identifier">shortest_Pair</span> = <span class="ruby-constant">Result_t</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">100</span>,<span class="ruby-string">&quot;&quot;</span>,<span class="ruby-string">&quot;&quot;</span>)
+  <span class="ruby-identifier">idAs</span> = <span class="ruby-identifier">get_ids_by_word</span>(<span class="ruby-identifier">wordA</span>)
+  <span class="ruby-identifier">idBs</span> = <span class="ruby-identifier">get_ids_by_word</span>(<span class="ruby-identifier">wordB</span>)
+
+  <span class="ruby-identifier">idAs</span>.<span class="ruby-identifier">each</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">idA</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">idBs</span>.<span class="ruby-identifier">each</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">idB</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">n</span> = <span class="ruby-identifier">compare_id</span>(<span class="ruby-identifier">idA</span>,<span class="ruby-identifier">idB</span>)
+        <span class="ruby-identifier">distance</span> = (<span class="ruby-identifier">alpha</span><span class="ruby-operator">*</span>(<span class="ruby-value">5</span><span class="ruby-operator">-</span><span class="ruby-identifier">n</span>)).<span class="ruby-identifier">round</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">distance</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">shortest_Pair</span>.<span class="ruby-identifier">value</span>
+        <span class="ruby-identifier">shortest_Pair</span>.<span class="ruby-identifier">value</span> = <span class="ruby-identifier">distance</span>
+        <span class="ruby-identifier">shortest_Pair</span>.<span class="ruby-identifier">x_id</span> = <span class="ruby-identifier">idA</span>
+        <span class="ruby-identifier">shortest_Pair</span>.<span class="ruby-identifier">y_id</span> = <span class="ruby-identifier">idB</span>
+      <span class="ruby-keyword">end</span>
+    }
+  }
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">shortest_Pair</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- dist-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- dist-method -->
+
+    
+      <div id="method-c-gen_findstring" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">gen_findstring</span><span
+            class="method-args">(code, start_index)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Given a word(string) and start_index(int),start_index`s value  range is
+[0,4], corresponding Cilin(同义词词林) ID`s different  segment: A，a，01，A，01=. 
+Returns a string that is used &#39;.&#39; to explace every char from  the
+start_index to the string`s end.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="gen_findstring-source">
+            <pre><span class="ruby-comment"># File lib/tyccl.rb, line 319</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">gen_findstring</span>(<span class="ruby-identifier">code</span>, <span class="ruby-identifier">start_index</span>)
+  <span class="ruby-identifier">frame</span> = <span class="ruby-identifier">cut_id</span>(<span class="ruby-identifier">code</span>)
+  (<span class="ruby-identifier">start_index</span>).<span class="ruby-identifier">upto</span>(<span class="ruby-value">4</span>){<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">frame</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">size</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>){ <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span>
+              <span class="ruby-identifier">frame</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">j</span>]=<span class="ruby-string">&#39;.&#39;</span>
+      }
+  }
+  <span class="ruby-identifier">combine_id</span>(<span class="ruby-identifier">frame</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- gen_findstring-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- gen_findstring-method -->
+
+    
+      <div id="method-c-get_dist_by_id" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_dist_by_id</span><span
+            class="method-args">(idA, idB)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Given idA(string) and idB(string). Returns semantic distance(int) between
+idA and idB, values in [0,10].</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_dist_by_id-source">
+            <pre><span class="ruby-comment"># File lib/tyccl.rb, line 220</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">get_dist_by_id</span>(<span class="ruby-identifier">idA</span>, <span class="ruby-identifier">idB</span>)
+      <span class="ruby-identifier">alpha</span>=<span class="ruby-value">10.0</span><span class="ruby-operator">/</span><span class="ruby-value">5</span>
+      <span class="ruby-identifier">n</span> = <span class="ruby-identifier">compare_id</span>(<span class="ruby-identifier">idA</span>,<span class="ruby-identifier">idB</span>)
+      (<span class="ruby-identifier">alpha</span><span class="ruby-operator">*</span>(<span class="ruby-value">5</span><span class="ruby-operator">-</span><span class="ruby-identifier">n</span>)).<span class="ruby-identifier">round</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_dist_by_id-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_dist_by_id-method -->
+
+    
+      <div id="method-c-get_equal" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_equal</span><span
+            class="method-args">(word)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Given a word(string).  Returns a two dimensional array that contains the
+parameter Word`s  equivalent words which divided by different ID that the
+word matchs. If the word has no synonym, nil is returned.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_equal-source">
+            <pre><span class="ruby-comment"># File lib/tyccl.rb, line 174</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">get_equal</span>(<span class="ruby-identifier">word</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">has_equal?</span>(<span class="ruby-identifier">word</span>)
+    <span class="ruby-identifier">equal_words</span>=[]
+    <span class="ruby-identifier">ids</span> = <span class="ruby-identifier">get_ids_by_word</span>(<span class="ruby-identifier">word</span>)
+    <span class="ruby-identifier">ids</span>.<span class="ruby-identifier">each</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">code</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">code</span>[<span class="ruby-value">-1</span>]<span class="ruby-operator">==</span><span class="ruby-node">&quot;#&quot;</span>
+        <span class="ruby-identifier">equal_words</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">get_words_by_id</span>(<span class="ruby-identifier">code</span>)
+      <span class="ruby-keyword">end</span>
+    }
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">equal_words</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_equal-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_equal-method -->
+
+    
+      <div id="method-c-get_id_sum" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_id_sum</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the total number of different ID in Cilin.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_id_sum-source">
+            <pre><span class="ruby-comment"># File lib/tyccl.rb, line 361</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">get_id_sum</span>
+      <span class="ruby-ivar">@IDsIndex</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_id_sum-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_id_sum-method -->
+
+    
+      <div id="method-c-get_ids_by_wildcard" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_ids_by_wildcard</span><span
+            class="method-args">(wildcard)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a sorted array containing IDs(string) that match the parameter
+Wildcard(string).  The wildcard characters that match any character are ‘*’
+and ‘.’ such as “Aa01A..=”,“Aa**A…” If no match is found, an empty array is
+returned.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_ids_by_wildcard-source">
+            <pre><span class="ruby-comment"># File lib/tyccl.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">get_ids_by_wildcard</span>(<span class="ruby-identifier">wildcard</span>)
+  <span class="ruby-ivar">@IDsTrie</span>.<span class="ruby-identifier">wildcard</span>(<span class="ruby-identifier">wildcard</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_ids_by_wildcard-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_ids_by_wildcard-method -->
+
+    
+      <div id="method-c-get_ids_by_word" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_ids_by_word</span><span
+            class="method-args">(word)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an array containing IDs(string) that the parameter Word(string)
+matchs.</p>
+
+<p>tips: the same word may have a few semantic meanings, so a word can match
+many IDs.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_ids_by_word-source">
+            <pre><span class="ruby-comment"># File lib/tyccl.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">get_ids_by_word</span>(<span class="ruby-identifier">word</span>)
+  <span class="ruby-identifier">m</span> = <span class="ruby-ivar">@index</span>[<span class="ruby-identifier">word</span>]
+      <span class="ruby-keyword">if</span>(<span class="ruby-identifier">m</span><span class="ruby-operator">==</span><span class="ruby-keyword">nil</span>)
+              <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">error</span>(<span class="ruby-identifier">word</span><span class="ruby-operator">+</span><span class="ruby-string">&quot; is an unlisted word!&quot;</span>)
+              <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+      <span class="ruby-keyword">else</span>
+              <span class="ruby-keyword">return</span> <span class="ruby-identifier">m</span>
+      <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_ids_by_word-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_ids_by_word-method -->
+
+    
+      <div id="method-c-get_index_sum" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_index_sum</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the total number of different words in Cilin.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_index_sum-source">
+            <pre><span class="ruby-comment"># File lib/tyccl.rb, line 366</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">get_index_sum</span>
+      <span class="ruby-ivar">@index</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_index_sum-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_index_sum-method -->
+
+    
+      <div id="method-c-get_same" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_same</span><span
+            class="method-args">(word)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Given a word(string).  Returns a two dimensional array that contains the
+parameter Word`s  synonym which divided by different ID that the word
+matchs. If the word has no synonym, nil is returned.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_same-source">
+            <pre><span class="ruby-comment"># File lib/tyccl.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">get_same</span>(<span class="ruby-identifier">word</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">has_same?</span>(<span class="ruby-identifier">word</span>)
+    <span class="ruby-identifier">same_words</span>=[]
+    <span class="ruby-identifier">ids</span> = <span class="ruby-identifier">get_ids_by_word</span>(<span class="ruby-identifier">word</span>)
+    <span class="ruby-identifier">ids</span>.<span class="ruby-identifier">each</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">code</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">code</span>[<span class="ruby-value">-1</span>]<span class="ruby-operator">==</span><span class="ruby-string">&quot;=&quot;</span>
+       <span class="ruby-identifier">same_words</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">get_words_by_id</span>(<span class="ruby-identifier">code</span>)
+      <span class="ruby-keyword">end</span>
+    }
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">same_words</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_same-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_same-method -->
+
+    
+      <div id="method-c-get_sim_by_id" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_sim_by_id</span><span
+            class="method-args">(idA, idB)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Given idA(string) and idB(string). Returns similarity(float) between idA
+and idB, values in [0,1].</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_sim_by_id-source">
+            <pre><span class="ruby-comment"># File lib/tyccl.rb, line 228</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">get_sim_by_id</span>(<span class="ruby-identifier">idA</span>, <span class="ruby-identifier">idB</span>)
+      <span class="ruby-identifier">n</span> = <span class="ruby-identifier">compare_id</span>(<span class="ruby-identifier">idA</span>,<span class="ruby-identifier">idB</span>)
+  <span class="ruby-identifier">str</span> = <span class="ruby-identifier">idA</span>.<span class="ruby-identifier">clone</span>   
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span><span class="ruby-operator">==</span><span class="ruby-value">0</span>
+    <span class="ruby-identifier">_sim</span> = <span class="ruby-identifier">factor</span>[<span class="ruby-value">0</span>]
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">n</span><span class="ruby-operator">==</span><span class="ruby-value">5</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">idA</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;=&quot;</span>
+      <span class="ruby-identifier">_sim</span> = <span class="ruby-identifier">factor</span>[<span class="ruby-value">5</span>]
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">idA</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">==</span> <span class="ruby-node">&quot;#&quot;</span>
+      <span class="ruby-identifier">_sim</span> = <span class="ruby-identifier">factor</span>[<span class="ruby-value">6</span>]
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">idA</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;@&quot;</span>
+      <span class="ruby-identifier">_sim</span> = <span class="ruby-identifier">factor</span>[<span class="ruby-value">5</span>]
+    <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">5</span>
+        <span class="ruby-identifier">findstring</span>=<span class="ruby-identifier">gen_findstring</span>(<span class="ruby-identifier">str</span>,<span class="ruby-identifier">n</span>)
+    <span class="ruby-identifier">node_num</span> = <span class="ruby-ivar">@IDsTrie</span>.<span class="ruby-identifier">wildcard</span>(<span class="ruby-identifier">findstring</span>).<span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">k</span> = (<span class="ruby-ivar">@IDsIndex</span>[<span class="ruby-identifier">idA</span>]<span class="ruby-operator">-</span><span class="ruby-ivar">@IDsIndex</span>[<span class="ruby-identifier">idB</span>]).<span class="ruby-identifier">abs</span>
+    <span class="ruby-identifier">_sim</span> = <span class="ruby-identifier">factor</span>[<span class="ruby-identifier">n</span>]<span class="ruby-operator">*</span>(<span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">node_num</span><span class="ruby-operator">*</span><span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span><span class="ruby-operator">/</span><span class="ruby-value">180</span>)).<span class="ruby-identifier">abs</span><span class="ruby-operator">*</span>((<span class="ruby-identifier">node_num</span><span class="ruby-operator">-</span><span class="ruby-identifier">k</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>)<span class="ruby-operator">*</span><span class="ruby-value">1.0</span><span class="ruby-operator">/</span><span class="ruby-identifier">node_num</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">_sim</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_sim_by_id-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_sim_by_id-method -->
+
+    
+      <div id="method-c-get_similar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_similar</span><span
+            class="method-args">(word, level=4)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Given a word(string) and a level(int),level`s value range is [0,4], 4 is
+default, value of level is more bigger, the similarity between returned
+words and the given word is more less.</p>
+
+<p>Returns a two dimensional array that contains the parameter Word`s  similar
+words which divided by different ID that the word matchs. If the word has
+no similar, nil is returned.</p>
+
+<p>tips: level 0,1,2,3,4 correspond Cilin(同义词词林) ID`s different  segment:
+A，a，01，A，01=.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_similar-source">
+            <pre><span class="ruby-comment"># File lib/tyccl.rb, line 197</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">get_similar</span>(<span class="ruby-identifier">word</span>, <span class="ruby-identifier">level</span>=<span class="ruby-value">4</span>)
+      <span class="ruby-identifier">ids</span> = <span class="ruby-identifier">get_ids_by_word</span>(<span class="ruby-identifier">word</span>)
+  <span class="ruby-identifier">similar</span>=[]
+  <span class="ruby-identifier">ids</span>.<span class="ruby-identifier">each</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">code</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">mini_similar</span>=[]
+    <span class="ruby-identifier">findstring</span> = <span class="ruby-identifier">gen_findstring</span>(<span class="ruby-identifier">code</span>, <span class="ruby-identifier">level</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>)
+    <span class="ruby-identifier">similar_IDs</span>=<span class="ruby-ivar">@IDsTrie</span>.<span class="ruby-identifier">wildcard</span>(<span class="ruby-identifier">findstring</span>)
+    <span class="ruby-identifier">similar_IDs</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">get_words_by_id</span>(<span class="ruby-identifier">item</span>).<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">term</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">mini_similar</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">term</span>
+      }
+    }
+    <span class="ruby-identifier">similar</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">mini_similar</span>
+  }
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">similar</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">similar</span>
+  <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_similar-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_similar-method -->
+
+    
+      <div id="method-c-get_words_by_id" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_words_by_id</span><span
+            class="method-args">(id)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Given id(string) such as:“Aa01A01=” “Aa01A03#” Returns an array containing
+words(string) that match this id  If no match is found, nil is returned.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_words_by_id-source">
+            <pre><span class="ruby-comment"># File lib/tyccl.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">get_words_by_id</span>(<span class="ruby-identifier">id</span>)
+  <span class="ruby-ivar">@IDsTrie</span>[<span class="ruby-identifier">id</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_words_by_id-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_words_by_id-method -->
+
+    
+      <div id="method-c-has_equal-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">has_equal?</span><span
+            class="method-args">(word)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Given a word(string). Test to see if the parameter Word has any equivalent
+word. Returns true or false.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="has_equal-3F-source">
+            <pre><span class="ruby-comment"># File lib/tyccl.rb, line 118</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">has_equal?</span>(<span class="ruby-identifier">word</span>)
+  <span class="ruby-identifier">ids</span> = <span class="ruby-identifier">get_ids_by_word</span>(<span class="ruby-identifier">word</span>)
+  <span class="ruby-identifier">i</span>=<span class="ruby-value">0</span>
+  <span class="ruby-identifier">flag</span>=<span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">ids</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">flag</span><span class="ruby-operator">==</span><span class="ruby-keyword">false</span>  <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">ids</span>[<span class="ruby-identifier">i</span>][<span class="ruby-value">-1</span>]<span class="ruby-operator">==</span><span class="ruby-node">&quot;#&quot;</span>
+      <span class="ruby-identifier">flag</span>=<span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">flag</span>=<span class="ruby-keyword">false</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">i</span><span class="ruby-operator">+=</span><span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">flag</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- has_equal-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- has_equal-3F-method -->
+
+    
+      <div id="method-c-has_same-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">has_same?</span><span
+            class="method-args">(word)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Given a word(string). Test to see if the parameter Word has any synonym.
+Returns true or false.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="has_same-3F-source">
+            <pre><span class="ruby-comment"># File lib/tyccl.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">has_same?</span>(<span class="ruby-identifier">word</span>)
+  <span class="ruby-identifier">ids</span> = <span class="ruby-identifier">get_ids_by_word</span>(<span class="ruby-identifier">word</span>)
+  <span class="ruby-identifier">i</span>=<span class="ruby-value">0</span>
+  <span class="ruby-identifier">flag</span>=<span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">ids</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">flag</span><span class="ruby-operator">==</span><span class="ruby-keyword">false</span>  <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">ids</span>[<span class="ruby-identifier">i</span>][<span class="ruby-value">-1</span>]<span class="ruby-operator">==</span><span class="ruby-string">&quot;=&quot;</span>
+      <span class="ruby-identifier">flag</span>=<span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">flag</span>=<span class="ruby-keyword">false</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">i</span><span class="ruby-operator">+=</span><span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">flag</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- has_same-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- has_same-3F-method -->
+
+    
+      <div id="method-c-has_single-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">has_single?</span><span
+            class="method-args">(word)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Given a word(string). Test to see if the parameter Word has any ID whose
+corresponding  words list just has only one element.  Returns true or
+false.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="has_single-3F-source">
+            <pre><span class="ruby-comment"># File lib/tyccl.rb, line 137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">has_single?</span>(<span class="ruby-identifier">word</span>)
+      <span class="ruby-identifier">ids</span> = <span class="ruby-identifier">get_ids_by_word</span>(<span class="ruby-identifier">word</span>)
+  <span class="ruby-identifier">i</span>=<span class="ruby-value">0</span>
+  <span class="ruby-identifier">flag</span>=<span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">ids</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">flag</span><span class="ruby-operator">==</span><span class="ruby-keyword">false</span>  <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">ids</span>[<span class="ruby-identifier">i</span>][<span class="ruby-value">-1</span>]<span class="ruby-operator">==</span><span class="ruby-string">&quot;@&quot;</span>
+      <span class="ruby-identifier">flag</span>=<span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">flag</span>=<span class="ruby-keyword">false</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">i</span><span class="ruby-operator">+=</span><span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">flag</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- has_single-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- has_single-3F-method -->
+
+    
+      <div id="method-c-sim" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sim</span><span
+            class="method-args">(wordA, wordB)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Given wordA(string) and wordB(string). Returns a Struct Result_t which
+contains the most similar Pairs  wordA`s ID and wordB`s ID, and
+similarity(float) between idA and idB.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="sim-source">
+            <pre><span class="ruby-comment"># File lib/tyccl.rb, line 276</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">sim</span>(<span class="ruby-identifier">wordA</span>, <span class="ruby-identifier">wordB</span>)
+  <span class="ruby-identifier">factor</span>=[<span class="ruby-value">0.02</span>,<span class="ruby-value">0.65</span>,<span class="ruby-value">0.8</span>,<span class="ruby-value">0.9</span>,<span class="ruby-value">0.96</span>,<span class="ruby-value">1</span>,<span class="ruby-value">0.5</span>]<span class="ruby-comment">#0,1,2,3,4,5各层参数</span>
+  <span class="ruby-identifier">longest_Pair</span> = <span class="ruby-constant">Result_t</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">-1</span>,<span class="ruby-string">&quot;&quot;</span>,<span class="ruby-string">&quot;&quot;</span>)
+  <span class="ruby-identifier">idAs</span> = <span class="ruby-identifier">get_ids_by_word</span>(<span class="ruby-identifier">wordA</span>)
+  <span class="ruby-identifier">idBs</span> = <span class="ruby-identifier">get_ids_by_word</span>(<span class="ruby-identifier">wordB</span>)
+
+  <span class="ruby-identifier">idAs</span>.<span class="ruby-identifier">each</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">idA</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">idBs</span>.<span class="ruby-identifier">each</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">idB</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">n</span> = <span class="ruby-identifier">compare_id</span>(<span class="ruby-identifier">idA</span>,<span class="ruby-identifier">idB</span>)
+      <span class="ruby-identifier">str</span> = <span class="ruby-identifier">idA</span>.<span class="ruby-identifier">clone</span>   
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span><span class="ruby-operator">==</span><span class="ruby-value">0</span>
+        <span class="ruby-identifier">_sim</span> = <span class="ruby-identifier">factor</span>[<span class="ruby-value">0</span>]
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">n</span><span class="ruby-operator">==</span><span class="ruby-value">5</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">idA</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;=&quot;</span>
+          <span class="ruby-identifier">_sim</span> = <span class="ruby-identifier">factor</span>[<span class="ruby-value">5</span>]
+        <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">idA</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">==</span> <span class="ruby-node">&quot;#&quot;</span>
+          <span class="ruby-identifier">_sim</span> = <span class="ruby-identifier">factor</span>[<span class="ruby-value">6</span>]
+        <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">idA</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;@&quot;</span>
+          <span class="ruby-identifier">_sim</span> = <span class="ruby-identifier">factor</span>[<span class="ruby-value">5</span>]
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">5</span>
+        <span class="ruby-identifier">findstring</span>=<span class="ruby-identifier">gen_findstring</span>(<span class="ruby-identifier">str</span>,<span class="ruby-identifier">n</span>)
+        <span class="ruby-identifier">node_num</span> = <span class="ruby-ivar">@IDsTrie</span>.<span class="ruby-identifier">wildcard</span>(<span class="ruby-identifier">findstring</span>).<span class="ruby-identifier">size</span>
+        <span class="ruby-identifier">k</span> = (<span class="ruby-ivar">@IDsIndex</span>[<span class="ruby-identifier">idA</span>]<span class="ruby-operator">-</span><span class="ruby-ivar">@IDsIndex</span>[<span class="ruby-identifier">idB</span>]).<span class="ruby-identifier">abs</span>
+        <span class="ruby-identifier">_sim</span> = <span class="ruby-identifier">factor</span>[<span class="ruby-identifier">n</span>]<span class="ruby-operator">*</span>(<span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">node_num</span><span class="ruby-operator">*</span><span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span><span class="ruby-operator">/</span><span class="ruby-value">180</span>)).<span class="ruby-identifier">abs</span><span class="ruby-operator">*</span>((<span class="ruby-identifier">node_num</span><span class="ruby-operator">-</span><span class="ruby-identifier">k</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>)<span class="ruby-operator">*</span><span class="ruby-value">1.0</span><span class="ruby-operator">/</span><span class="ruby-identifier">node_num</span>)
+      <span class="ruby-keyword">end</span>
+      
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">_sim</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">longest_Pair</span>.<span class="ruby-identifier">value</span>
+        <span class="ruby-identifier">longest_Pair</span>.<span class="ruby-identifier">value</span> = <span class="ruby-identifier">_sim</span>
+        <span class="ruby-identifier">longest_Pair</span>.<span class="ruby-identifier">x_id</span> = <span class="ruby-identifier">idA</span>
+        <span class="ruby-identifier">longest_Pair</span>.<span class="ruby-identifier">y_id</span> = <span class="ruby-identifier">idB</span>
+      <span class="ruby-keyword">end</span>
+    }
+  }
+  <span class="ruby-identifier">longest_Pair</span>.<span class="ruby-identifier">value</span> = (<span class="ruby-string">&quot;%1.5f&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">longest_Pair</span>.<span class="ruby-identifier">value</span>).<span class="ruby-identifier">to_f</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">longest_Pair</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- sim-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- sim-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
