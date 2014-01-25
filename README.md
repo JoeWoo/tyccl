@@ -2,7 +2,9 @@
 
 tyccl(同义词词林 哈工大扩展版) is a  ruby gem that provides friendly functions to analyse similarity between Chinese Words.
 
-all of Tyccl`s source files using charset: UTF-8
+all of Tyccl`s source files using charset: UTF-8  
+Finding algorithm using Tire and Hash, Time complexity O(m) m<=5,   Space complexity O(n), n is proportional to the records of Cilin.  
+Cilin.txt(892.6KB).   
 
 ## Installation
 
