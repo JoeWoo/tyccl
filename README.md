@@ -30,19 +30,18 @@ simple example:
   # * field 'x_id' 'y_id' store the ID of word X and Y 
 	
   require 'tyccl'
-	tyc = Tyccl.instance  # singleton class
  
   # Given wordA(string) and wordB(string). 
   # Returns a Struct Result_t which contains idA, idB, and shortest semantic distance(int) between wordA and wordB. 
 
-  	result = tyc.dist("西红柿","黄瓜") 
+  	result = Tyccl.dist("西红柿","黄瓜") 
 	  	puts result.value
 	  	puts result.x_id
 	  	puts result.y_id
 
   # Given wordA(string) and wordB(string).
   # Returns a Struct Result_t which contains the most similar Pairs wordA`s ID and wordB`s ID, and similarity(float) between idA and idB.
-  	result = tyc.sim("西红柿","黄瓜")
+  	result = Tyccl.sim("西红柿","黄瓜")
 	  	puts result.value
 	  	puts result.x_id
 	  	puts result.y_id
@@ -51,7 +50,7 @@ simple example:
   # Returns a two dimensional array that contains the parameter Word`s similar words which divided by different ID that the word matchs.
   # If the word has no similar, nil is returned.
 
-	m = tyc.get_similar("人")  
+	m = Tyccl.get_similar("人")  
 	puts m
 	#[	["人", "士", "人物", "人士", "人氏", "人选"],
  	#	["成年人", "壮年人", "大人", "人", "丁", "壮丁", "佬", "中年人"],

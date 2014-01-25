@@ -2,18 +2,16 @@
 
 # = this gem is a tool for analysing similarity
 # = between Chinese words. it based on <em>HIT Tongyici Cilin (Extended)<\em>(同义词词林())  
-# this gem only has one singleton class, instance once and use it always.
 # 
-# learn more about Tongyici Cilin(同义词词林) http://vdisk.weibo.com/s/qGrIviGdExvx
+# * learn more about Tongyici Cilin(同义词词林) http://vdisk.weibo.com/s/qGrIviGdExvx
 #
-# Author::    Joe Woo  (https://github.com/JoeWoo)
-# License::   MIT
+# * Author::    Joe Woo  (https://github.com/JoeWoo)
+# * License::   MIT
 #
 
 require File.expand_path("../tyccl/version", __FILE__)
 require "algorithms"
 require "yaml"
-require "singleton"
 require "logger"
 
 
@@ -26,69 +24,68 @@ Result_t = Struct.new(:value,:x_id,:y_id)
 # to keep Tyccl object just only one. 
 class Tyccl
 
-  include Singleton
-
+  #--
   # Read the Cilin file to memory.
   # Format the data structure \#@IDsTire.
   # Index the hash \#@IDsIndex.
-  def initialize()#:notnew: stops RDoc from seeing the initialize method as the new method
-  	#--
-    #read the cilin.txt to ids[] and items[]
-    #++
-    @logger = Logger.new(STDOUT)
-    @logger.level = Logger::WARN
-    codes=[]
-    items=[]
-    @IDsIndex = Hash.new
-    f = File.new(File.expand_path("../cilin.txt", __FILE__))
-    i=0
-    f.each { |line|
-      line.force_encoding('utf-8')
-      m=line.split(" ")
-      codes << m[0]
-      @IDsIndex[m[0]] = i
-      i += 1
-      word = Array.new
-      m[1..-1].each{ |term|
-        word << term
-      }
-      items << word
+  #++
+	#--
+  #read the cilin.txt to ids[] and items[]
+  #++
+  @logger = Logger.new(STDOUT)
+  @logger.level = Logger::WARN
+  codes=[]
+  items=[]
+  @IDsIndex = Hash.new
+  f = File.new(File.expand_path("../cilin.txt", __FILE__))
+  i=0
+  f.each { |line|
+    line.force_encoding('utf-8')
+    m=line.split(" ")
+    codes << m[0]
+    @IDsIndex[m[0]] = i
+    i += 1
+    word = Array.new
+    m[1..-1].each{ |term|
+      word << term
     }
-    #--
-    #init Trie of cilin.txt
-    #++
-    @IDsTrie = Containers::Trie.new
-    i=0
-    codes.each{ |key|
-      @IDsTrie[key]=items[i]
-      i+=1
-    }
-    #--
-    #init index of cilin.txt
-    #++
-    @index = YAML::load(File.open(File.expand_path("../Inverted.yaml", __FILE__)))
-  end
+    items << word
+  }
+  #--
+  #init Trie of cilin.txt
+  #++
+  @IDsTrie = Containers::Trie.new
+  i=0
+  codes.each{ |key|
+    @IDsTrie[key]=items[i]
+    i+=1
+  }
+  #--
+  #init index of cilin.txt
+  #++
+  @index = YAML::load(File.open(File.expand_path("../Inverted.yaml", __FILE__)))
+
 
  
 
   # Given id(string) such as:"Aa01A01=" "Aa01A03#"
   # Returns an array containing words(string) that match this id 
   # If no match is found, nil is returned.
-  def get_words_by_id(id)
+  def self.get_words_by_id(id)
     @IDsTrie[id]
   end
 
   # Returns a sorted array containing IDs(string) that match the parameter Wildcard(string). 
   # The wildcard characters that match any character are ‘*’ and ‘.’ such as "Aa01A..=","Aa**A..."
   # If no match is found, an empty array is returned.
-  def get_ids_by_wildcard(wildcard)
+  def self.get_ids_by_wildcard(wildcard)
     @IDsTrie.wildcard(wildcard)
   end
 
   # Returns an array containing IDs(string) that the parameter Word(string) matchs.
   #
   # tips: the same word may have a few semantic meanings, so a word can match many IDs.
-  def get_ids_by_word(word)
+  def self.get_ids_by_word(word)
     m = @index[word]
   	if(m==nil)
   		@logger.error(word+" is an unlisted word!")
@@ -101,7 +98,7 @@ class Tyccl
   # Given a word(string).
   # Test to see if the parameter Word has any synonym.
   # Returns true or false. 
-  def has_same?(word)
+  def self.has_same?(word)
     ids = get_ids_by_word(word)
     i=0
     flag=false
@@ -119,7 +116,7 @@ class Tyccl
   # Given a word(string).
   # Test to see if the parameter Word has any equivalent word.
   # Returns true or false.
-  def has_equal?(word)
+  def self.has_equal?(word)
     ids = get_ids_by_word(word)
     i=0
     flag=false
@@ -138,7 +135,7 @@ class Tyccl
   # Test to see if the parameter Word has any ID whose corresponding 
   # words list just has only one element. 
   # Returns true or false. 
-  def has_single?(word)
+  def self.has_single?(word)
   	ids = get_ids_by_word(word)
     i=0
     flag=false
@@ -157,7 +154,7 @@ class Tyccl
   # Returns a two dimensional array that contains the parameter Word`s 
   # synonym which divided by different ID that the word matchs.
   # If the word has no synonym, nil is returned. 
-  def get_same(word)
+  def self.get_same(word)
     if has_same?(word)
       same_words=[]
       ids = get_ids_by_word(word)
@@ -175,7 +172,7 @@ class Tyccl
   # Returns a two dimensional array that contains the parameter Word`s 
   # equivalent words which divided by different ID that the word matchs.
   # If the word has no synonym, nil is returned. 
-  def get_equal(word)
+  def self.get_equal(word)
     if has_equal?(word)
       equal_words=[]
       ids = get_ids_by_word(word)
@@ -198,7 +195,7 @@ class Tyccl
   #
   # tips: level 0,1,2,3,4 correspond Cilin(同义词词林) ID`s different 
   # segment: A，a，01，A，01=. 
-  def get_similar(word, level=4)
+  def self.get_similar(word, level=4)
   	ids = get_ids_by_word(word)
     similar=[]
     ids.each{ |code|
@@ -221,7 +218,7 @@ class Tyccl
 
   # Given idA(string) and idB(string).
   # Returns semantic distance(int) between idA and idB, values in [0,10].
-  def get_dist_by_id(idA, idB)
+  def self.get_dist_by_id(idA, idB)
   	alpha=10.0/5
   	n = compare_id(idA,idB)
   	(alpha*(5-n)).round
@@ -229,7 +226,7 @@ class Tyccl
 
   # Given idA(string) and idB(string).
   # Returns similarity(float) between idA and idB, values in [0,1]. 
-  def get_sim_by_id(idA, idB)
+  def self.get_sim_by_id(idA, idB)
    	n = compare_id(idA,idB)
     str = idA.clone   
     if n==0
@@ -254,7 +251,7 @@ class Tyccl
   # Given wordA(string) and wordB(string).
   # Returns a Struct Result_t which contains idA, idB, and shortest 
   # semantic distance(int) between wordA and wordB.
-  def dist(wordA, wordB)
+  def self.dist(wordA, wordB)
     alpha=10.0/5
     shortest_Pair = Result_t.new(100,"","")
     idAs = get_ids_by_word(wordA)
@@ -277,7 +274,7 @@ class Tyccl
   # Given wordA(string) and wordB(string).
   # Returns a Struct Result_t which contains the most similar Pairs 
   # wordA`s ID and wordB`s ID, and similarity(float) between idA and idB.
-  def sim(wordA, wordB)
+  def self.sim(wordA, wordB)
     factor=[0.02,0.65,0.8,0.9,0.96,1,0.5]#0,1,2,3,4,5各层参数
     longest_Pair = Result_t.new(-1,"","")
     idAs = get_ids_by_word(wordA)
@@ -320,7 +317,7 @@ class Tyccl
   # segment: A，a，01，A，01=. 
   # Returns a string that is used '.' to explace every char from 
   # the start_index to the string`s end. 
-  def gen_findstring(code, start_index)
+  def self.gen_findstring(code, start_index)
     frame = cut_id(code)
     (start_index).upto(4){|i|
     	0.upto(frame[i].size-1){ |j|
@@ -333,13 +330,13 @@ class Tyccl
   # Given a id(string).
   # Returns an array that contains 5 strings which are ID`s 
   # diffrent segment, like: A，a，01，A，01= .
-  def cut_id(id)
+  def self.cut_id(id)
     frame=[id[0],id[1],id[2..3],id[4],id[5..7]]
     return frame
   end
 
   # the method #cut_id`s inverse process.
-  def combine_id(frame)
+  def self.combine_id(frame)
     m=""
     frame.each{|seg|
       m << seg
@@ -350,7 +347,7 @@ class Tyccl
   # Given idA(string) and idB(string).
   # Returns fisrt diffrent place of their segment, place vlaues in[0,4].
   # if they are the same , returns 5.
-  def compare_id(idA, idB) 
+  def self.compare_id(idA, idB) 
     frameA=cut_id(idA)
     frameB=cut_id(idB)
     0.upto(frameA.length-1){ |i|
@@ -362,12 +359,12 @@ class Tyccl
   end
 
   # Returns the total number of different ID in Cilin. 
-  def get_id_sum
+  def self.get_id_sum
   	@IDsIndex.size
   end
 
   # Returns the total number of different words in Cilin. 
-  def get_index_sum
+  def self.get_index_sum
   	@index.size
   end
 

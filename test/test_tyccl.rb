@@ -5,75 +5,75 @@ require 'test/unit'
 require File.expand_path('../../lib/tyccl', __FILE__)
 
 
-$tyc=Tyccl.instance
 
-class TycclTest < Test::Unit::TestCase
+
+class TycclTest < Test::Unit::TestCase  #:nodoc:all
 
   def test_instance
     assert_equal 17809,
-        $tyc.get_id_sum
+        Tyccl.get_id_sum
     assert_equal 77457,
-    	$tyc.get_index_sum
+    	Tyccl.get_index_sum
   end
 
   def test_get_words_by_id
   	assert_equal ["人","士","人物","人士","人氏","人选"],
-  		$tyc.get_words_by_id("Aa01A01=")
+  		Tyccl.get_words_by_id("Aa01A01=")
   	assert_equal nil,
-  		$tyc.get_words_by_id("dfdf")
+  		Tyccl.get_words_by_id("dfdf")
 
   end
   
   def test_get_ids_by_wildcard
   	assert_equal 9,
-  		$tyc.get_ids_by_wildcard("Aa01A...").size
+  		Tyccl.get_ids_by_wildcard("Aa01A...").size
   	assert_equal 32,
-  		$tyc.get_ids_by_wildcard("Aa**A...").size
+  		Tyccl.get_ids_by_wildcard("Aa**A...").size
   end
 
   def test_get_ids_by_word
   	assert_equal nil,
-  		$tyc.get_ids_by_word("屌丝")
+  		Tyccl.get_ids_by_word("屌丝")
   	assert_equal 1,
-  		$tyc.get_ids_by_word("桅顶").size
+  		Tyccl.get_ids_by_word("桅顶").size
   	assert_equal 7,
-  		$tyc.get_ids_by_word("底").size
+  		Tyccl.get_ids_by_word("底").size
   end
 
   def test_has_same
   	assert_equal true,
-  		$tyc.has_same?("人")
+  		Tyccl.has_same?("人")
   	assert_equal false,
-  		$tyc.has_same?("顺民")
+  		Tyccl.has_same?("顺民")
   	assert_equal false,
-  		$tyc.has_same?("众学生")
+  		Tyccl.has_same?("众学生")
   end
 
   def test_has_equal
   	assert_equal true,
-  		$tyc.has_equal?("良民")
+  		Tyccl.has_equal?("良民")
   	assert_equal false,
-  		$tyc.has_equal?("众学生")
+  		Tyccl.has_equal?("众学生")
   	assert_equal false,
-  		$tyc.has_equal?("人")
+  		Tyccl.has_equal?("人")
   end
 
   def test_has_single
   	assert_equal false,
-  		$tyc.has_single?("良民")
+  		Tyccl.has_single?("良民")
   	assert_equal true,
-  		$tyc.has_single?("众学生")
+  		Tyccl.has_single?("众学生")
   	assert_equal false,
-  		$tyc.has_single?("人")
+  		Tyccl.has_single?("人")
   end
 
   def test_get_same
-  	m=$tyc.get_same("人")
+  	m=Tyccl.get_same("人")
   	
   	assert_equal nil,
-  		$tyc.get_same("顺民")
+  		Tyccl.get_same("顺民")
   	assert_equal nil,
-  		$tyc.get_same("众学生")
+  		Tyccl.get_same("众学生")
   	assert_equal 5,
   		m.size
   	assert_equal 6,
@@ -91,13 +91,13 @@ class TycclTest < Test::Unit::TestCase
 
   def test_get_equal
   	assert_equal nil,
-  		$tyc.get_equal("人")
+  		Tyccl.get_equal("人")
   	assert_equal nil,
-  		$tyc.get_equal("众学生")
+  		Tyccl.get_equal("众学生")
   	assert_equal 1,
-  		$tyc.get_equal("流民").size
+  		Tyccl.get_equal("流民").size
   	assert_equal 9,
-  		$tyc.get_equal("流民")[0].size
+  		Tyccl.get_equal("流民")[0].size
   end
 
   def test_get_similar
@@ -106,24 +106,24 @@ class TycclTest < Test::Unit::TestCase
  					["身体", "人"],
  					["人格", "人品", "人头", "人", "品质", "质地", "格调", "灵魂", "为人"],
  					["人数", "人头", "人口", "人", "口", "丁", "家口", "食指", "总人口"]	],
-  		$tyc.get_similar("人")
+  		Tyccl.get_similar("人")
   end
 
 # dist ranges [0,10]; 
 # if dist<7 then we believe that the two words are related 
   def test_dist  
   	assert_equal Result_t.new(0,"Aa01A01=","Aa01A01="),
-  		$tyc.dist("人","士")
+  		Tyccl.dist("人","士")
   	assert_equal Result_t.new(2,"Bh06A32=","Bh06A34="),
-  		$tyc.dist("西红柿","黄瓜")
+  		Tyccl.dist("西红柿","黄瓜")
   	assert_equal Result_t.new(4,"Aa01A05=","Aa01B03#"),
-  		$tyc.dist("匹夫","良民")
+  		Tyccl.dist("匹夫","良民")
   	assert_equal Result_t.new(6,"Bh07A14=","Bh06A32="),
-  		$tyc.dist("苹果","西红柿")
+  		Tyccl.dist("苹果","西红柿")
   	assert_equal Result_t.new(8,"Aa01B02=","Ab01B10="),
-  		$tyc.dist("群众","村姑")
+  		Tyccl.dist("群众","村姑")
   	assert_equal Result_t.new(10,"Aa01A01=","Kd04C01="),
-  		$tyc.dist("人","哟")
+  		Tyccl.dist("人","哟")
   end
 
   def test_sim
@@ -142,7 +142,7 @@ class TycclTest < Test::Unit::TestCase
   	i=0
   	words.each{  |word|
   		assert_equal result[i],
-  			$tyc.sim("人民",word)
+  			Tyccl.sim("人民",word)
   		i+=1
   	}
   end

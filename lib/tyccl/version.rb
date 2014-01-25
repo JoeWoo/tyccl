@@ -1,3 +1,3 @@
-class Tyccl
-  VERSION = "0.0.1"
+class Tyccl  #:nodoc:all
+  VERSION = "0.0.2"
 end
