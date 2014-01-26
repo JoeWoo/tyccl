@@ -10,7 +10,8 @@ Cilin.txt(892.6KB).
 
 Add this line to your application's Gemfile:
 
-    gem 'tyccl'
+    gem 'tyccl'  
+    gem 'algorithms'
 
 And then execute:
 
@@ -18,7 +19,8 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install tyccl
+    $ gem install tyccl  
+    $ gem install algorithms  
 
 ## Usage
  
@@ -71,4 +73,3 @@ download and see more methods in [api doc](https://github.com/JoeWoo/tyccl/blob/
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin fork-new`)
 5. Create new Pull Request
-
